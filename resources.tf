@@ -1,8 +1,14 @@
-//resource "google_compute_network" "our_development_network" {
-//    name = "devnetwork"
-//    auto_create_subnetworks = true
-//}
+resource "google_compute_network" "our_development_network" {
+    name = "devnetwork"
+    auto_create_subnetworks = true
+}
 
+resource "google_compute_subnetwork" "dev-subnet" {
+    ip_cidr_range = "10.0.1.0/24"
+    name = "devsubnet"
+    network = "${google_compute_network.our_development_network.self_link}"
+    region = "us-west1"
+}
 
 resource "aws_vpc" "environment-example-two" {
     cidr_block = "10.0.0.0/16"
@@ -13,7 +19,6 @@ resource "aws_vpc" "environment-example-two" {
         Name = "terraform-aws-vpc-example-two"
     }
 }
-
 
 resource "aws_subnet" "subnet1" {
 //    cidr_block = "${aws_vpc.environment-example-two.id}"
