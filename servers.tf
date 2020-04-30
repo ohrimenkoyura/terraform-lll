@@ -29,24 +29,46 @@ data "aws_ami" "ubuntu" {
   most_recent = true
 
   filter {
-    name= "name"
+    name   = "name"
     values = ["ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-*"]
   }
 
   filter {
-    name = "virtualization-type"
+    name   = "virtualization-type"
     values = ["hvm"]
   }
 
   owners = ["099720109477"] # Canonical
 }
 
-resource "aws_instance" "secondserver" {
-  ami = "${data.aws_ami.ubuntu.id}"
-  instance_type = "t2.micro"
+//resource "aws_instance" "secondserver" {
+//  ami           = "${data.aws_ami.ubuntu.id}"
+//  instance_type = "t2.micro"
+//
+//  tags = {
+//    Name = "t2.micro.identifiertag"
+//  }
+//
+//  subnet_id = "${aws_subnet.subnet2.id} "
+//}
+
+//resource "aws_instance" "thirdserver" {
+//  ami = "${data.aws_ami.ubuntu.id}"
+//  instance_type = "t2.large"
+//
+//  tags = {
+//    Name = "t2.large.identifiertag"
+//  }
+//
+//  subnet_id = "${aws_subnet.subnet2.id} "
+//}
+
+resource "aws_instance" "fourthserver" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t2.nano"
 
   tags = {
-    name = "identifiertag"
+    Name = "t2.nano.identifiertag"
   }
 
   subnet_id = "${aws_subnet.subnet2.id} "

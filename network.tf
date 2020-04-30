@@ -4,13 +4,13 @@
 //}
 
 resource "aws_vpc" "environment-example-two" {
-    cidr_block = "10.0.0.0/16"
-    enable_dns_hostnames = "true"
-    enable_dns_support = "true"
+  cidr_block           = var.aws_ip_cidr_range
+  enable_dns_hostnames = "true"
+  enable_dns_support   = "true"
 
-    tags = {
-        Name = "terraform-aws-vpc-example-two"
-    }
+  tags = {
+    Name = "terraform-aws-vpc-example-two"
+  }
 }
 
 //resource "azurerm_resource_group" "azy_network" {
