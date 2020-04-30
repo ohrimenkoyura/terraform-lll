@@ -7,6 +7,7 @@
 provider "aws" {
     region = "us-east-2"
 }
+
 //provider "azurerm" {
 //    subscription_id = "${var.subscrition_id}"
 //    client_id = "${var.client_id}"

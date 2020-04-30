@@ -30,22 +30,24 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name= "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-trustu-14.04-amd64-server-*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-*"]
   }
 
   filter {
     name = "virtualization-type"
     values = ["hvm"]
   }
-//canonical
-  owners = ["099720109477"]
+
+  owners = ["099720109477"] # Canonical
 }
 
 resource "aws_instance" "secondserver" {
-  ami = "${data.aws_ami.ubuntu.id} "
+  ami = "${data.aws_ami.ubuntu.id}"
   instance_type = "t2.micro"
 
   tags = {
     name = "identifiertag"
   }
+
+  subnet_id = "${aws_subnet.subnet2.id} "
 }
