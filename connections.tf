@@ -8,8 +8,14 @@ provider "aws" {
     region = "us-east-2"
 }
 //provider "azurerm" {
-//    subscription_id = "0"
-//    client_id = "1"
-//    client_secret = "2"
-//    tenant_id = "3"
+//    subscription_id = "${var.subscrition_id}"
+//    client_id = "${var.client_id}"
+//    client_secret = "${var.subscrition_secret}"
+//    tenant_id = "${var.tenant_id}"
 //}
+
+//variable sudscription_id{}
+//variable client_id{}
+//variable client_secret{}
+//variable tenant_id{}
+
