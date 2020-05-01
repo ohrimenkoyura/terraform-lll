@@ -4,6 +4,16 @@
 //  type        = "string"
 //  description = "Just the network name for the Google Compute Platform."
 //}
+
+variable "new_value" {
+
+}
+
+variable "new_map" {
+  type = map
+}
+
+
 //
 //variable gcp_ip_cidr_range {
 //  default = "10.0.0.0/16"
