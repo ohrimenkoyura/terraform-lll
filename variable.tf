@@ -26,3 +26,18 @@ variable subnet_names {
     subnet3 = "subnetthree"
   }
 }
+
+variable "listtype" {
+  type = list
+  default = ["item1", "item2"]
+}
+
+// Output variables
+
+output "first_output" {
+  value = " this is the value through executions"
+}
+
+output "aws_cidr_subnet1" {
+  value = "${aws_subnet.subnet1.cidr_block}"
+}
