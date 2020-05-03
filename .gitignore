@@ -1,4 +1,6 @@
 .idea
+# Module directory
+.terraform/
 
 # Local .terraform directories
 **/.terraform/*

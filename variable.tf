@@ -4,16 +4,16 @@
 //  type        = "string"
 //  description = "Just the network name for the Google Compute Platform."
 //}
-
-variable "new_value" {
-
-}
-
-variable "new_map" {
-  type = map
-}
-
-
+//
+//variable "new_value" {
+//
+//}
+//
+//variable "new_map" {
+//  type = map
+//}
+//
+//
 //
 //variable gcp_ip_cidr_range {
 //  default = "10.0.0.0/16"
@@ -41,6 +41,17 @@ variable "listtype" {
   type = list
   default = ["item1", "item2"]
 }
+
+variable "vpc_name" {
+  description = "The name of  the VPC network"
+}
+
+variable "s3_terraform_bucket" {
+
+}
+
+variable "environment" {}
+variable "region" {}
 
 // Output variables
 
