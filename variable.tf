@@ -42,16 +42,7 @@ variable "listtype" {
   default = ["item1", "item2"]
 }
 
-variable "vpc_name" {
-  description = "The name of  the VPC network"
-}
 
-variable "s3_terraform_bucket" {
-
-}
-
-variable "environment" {}
-variable "region" {}
 
 // Output variables
 
